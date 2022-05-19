@@ -1,0 +1,144 @@
+<html lang='en'>
+	<head>
+		{{>head}}
+        {{>style}}
+	</head>
+	<body>
+        {{>nav}}
+		<header>
+			<div class='text'>
+				<h5>welcome to the weather app</h5>
+				<h1 class='logoname'></h1>
+				<button type="button" href='/weather'>click me</button>
+			</div>
+			<div class='coursoule'>
+			</div>
+		</header>
+		<div class="main">
+			<div class="local">
+				<h1>{{city}}</h1>
+				<h2>{{state}}</h2>
+				<h3>({{country}})</h3>
+			</div>
+			<div class="weather">
+				<div>
+					<img
+						src="https://cdn-icons-png.flaticon.com/512/6697/6697685.png"
+						alt=""
+					/>
+					<h1>{{weather}}</h1>
+				</div>
+				<div>
+					<img
+						style="width: 4rem"
+						src="https://cdn-icons-png.flaticon.com/512/7366/7366791.png"
+						alt=""
+					/>
+					<h2>Temperature : {{temp}}</h2>
+				</div>
+			</div>
+			<div class="datas">
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="" />
+					<h1>max Temperature</h1>
+					<h2>{{temp_max}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3815/3815447.png" alt="" />
+					<h1>min Temperature</h1>
+					<h2>{{temp_min}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005826.png" alt="" />
+					<h1>pressure</h1>
+					<h2>{{pressure}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005754.png" alt="" />
+					<h1>humidity</h1>
+					<h2>{{humidity}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/5136/5136205.png" alt="" />
+					<h1>visibility</h1>
+					<h2>{{visibility}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3050/3050874.png" alt="" />
+					<h1>wind</h1>
+					<h2>{{wind}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315683.png" alt="" />
+					<h1>sunrise</h1>
+					<h2>{{sunrise}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315684.png" alt="" />
+					<h1>sunset</h1>
+					<h2>{{sunset}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/2385/2385060.png" alt="" />
+					<h1>longatitude</h1>
+					<h2>{{lon}}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/7334/7334563.png" alt="" />
+					<h1>latitude</h1>
+					<h2>{{lat}}</h2>
+				</div>
+			</div>
+		</div>
+		<div class="pollution">
+			<div class="head">
+			<img src="https://cdn-icons-png.flaticon.com/512/7351/7351674.png" alt="">
+			<h1>Pollution</h1>
+			</div>
+			<div class="details">
+			<div class="index">
+				<img src="https://cdn-icons-png.flaticon.com/512/6966/6966907.png" alt="">
+				<h1>co</h1>
+				<h2>{{co}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons.flaticon.com/png/512/4383/premium/4383606.png?token=exp=1652189588~hmac=ea3e203403f8c7f87f536db6b06add9c" alt="">
+				<h1>no</h1>
+				<h2>{{no}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons.flaticon.com/png/512/4413/premium/4413218.png?token=exp=1652190040~hmac=2d818833ad0579740d08d6a2ddb57128" alt="">
+				<h1>no2</h1>
+				<h2>{{no2}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons.flaticon.com/png/512/3568/premium/3568495.png?token=exp=1652190186~hmac=26f442c115368fd143df340e6d60a43f" alt="">
+				<h1>o3</h1>
+				<h2>{{o3}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons-png.flaticon.com/512/5009/5009724.png" alt="">
+				<h1>so2</h1>
+				<h2>{{so2}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons-png.flaticon.com/512/2848/2848940.png" alt="">
+				<h1>pm2_5</h1>
+				<h2>{{pm2_5}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons-png.flaticon.com/512/4357/4357542.png" alt="">
+				<h1>pm10</h1>
+				<h2>{{pm10}}  μg/m3</h2>
+			</div>
+			<div class="index">
+				<img src="https://cdn-icons.flaticon.com/png/512/5129/premium/5129906.png?token=exp=1652190507~hmac=33c75d398c2b0c2b9976cb764916c94d" alt="">
+				<h1>nh3</h1>
+				<h2>{{nh3}}  μg/m3</h2>
+			</div>
+			</div>
+		</div>
+		
+	    {{>script}}
+	</body>
+</html>

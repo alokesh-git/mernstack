@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+{{>head}}
+{{>style}}
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="login-page">
+  <div class="form">
+    <form method="post" action="/register" class="register-form">
+      <input type="text" name="firstname" autocomplete="on" required placeholder="First Name"/>
+      <input type="text" name="lastname" autocomplete="on" required placeholder="Last Name"/>
+      <input type="email" name="email" autocomplete="on" required placeholder="Email Address"/>
+      <div class="gender">
+        <h1>Gender</h1>
+        <h2>Male</h2>
+        <input type="radio" value="male" name="gender" id="">
+        <h2>Female</h2>
+        <input type="radio" value="female" name="gender" id="">
+      </div>
+      <input type="number" name="phone" autocomplete="on" required placeholder="Your Phone Number"/>
+      <input type="number" name="age" autocomplete="on" required placeholder="Your Age"/>
+      <input type="password" name="password" autocomplete="on" required name="password" id="" placeholder="Your Password" >
+      <input type="password" name="Confirm_password" autocomplete="on" required name="password" id="" placeholder="Confirm Password">
+      <input type="file" name="image" id="">
+      <button type="submit" name="register" href="/" >create</button>
+      <p class="message">Already registered? <a href="/login">Sign In</a></p>
+    </form>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  {{>script}}
+</body>
+</html>

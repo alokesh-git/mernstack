@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>head}}
+   {{>style}}
+</head>
+<body>
+    {{>nav}}
+    <div class="weathermain">
+			<div class="inputs">
+				<div class="inputdiv" style="margin-top:5rem;" >
+					<input type="text" name="" id="cityname" value={{city}} class="input" placeholder="city / state / country" />
+					<button type="submit" class="button" id="submit" >submit</button>
+				</div>
+			</div>
+			<div class="main"></div>
+		</div>
+    {{>script}}
+</body>
+</html>

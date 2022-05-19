@@ -1,0 +1,484 @@
+<style>
+    /** @format */
+*,
+*:after,
+*:before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	width: 100%;
+	min-height: 100vh;
+	max-height: auto;
+	background-color: #fff;
+}
+nav {
+	width: 100%;
+	height: auto;
+	background: linear-gradient(
+		to right,
+		rgb(236, 184, 124),
+		rgb(189, 99, 231),
+		rgb(134, 150, 240)
+	);
+	padding: 0.2rem;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: #555;
+	font-family: monospace;
+	font-weight: 800;
+	font-size: large;
+	margin-left: 2rem;
+}
+div.link {
+	display: flex;
+	flex-direction: row;
+}
+.on {
+	color: #fff;
+}
+.logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.logo > h1 {
+	color: rgb(128, 194, 238);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 2.5rem;
+	font-weight: bolder;
+	clear: right;
+	text-shadow: 0.2rem 0.2rem 0.4rem #111;
+	margin: 0rem 2rem;
+}
+.logoimage > img {
+	width: 5rem;
+	margin: 0rem 2rem;
+	filter: drop-shadow(0.5rem 0.5rem 1rem #000);
+}
+
+header {
+	width: 100%;
+	height: 70vh;
+	box-shadow: 0.5rem 0.5rem 1rem #333;
+	display: flex;
+	flex-direction: row;
+}
+header > .text {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 5rem;
+}
+.coursoule {
+	width: 50%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+    background: url("https://wonderindiaholidays.com/wp-content/uploads/2019/08/blog-01.jpg"),no-repeat;
+    background-size: 100% 100%;
+}
+.text > h5 {
+	color: rgb(200, 92, 250);
+	font-family: monospace;
+	font-size: x-large;
+}
+.text > h1 {
+	color: rgb(134, 150, 240);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 4rem;
+	text-transform: capitalize;
+	word-wrap: break-word;
+}
+.text > button {
+	width: fit-content;
+	height: auto;
+	font-size: 2rem;
+	font-family: monospace;
+	text-transform: capitalize;
+	font-weight: 800;
+	color: white;
+	border: none;
+	outline: none;
+	background: rgb(240, 165, 105);
+	padding: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	box-shadow: 1rem 1rem 2rem rgb(145, 104, 240);
+}
+.coursoule>img{
+  width:30rem;
+  filter: drop-shadow(2rem 2rem 2.5rem #111);
+}
+.aboutmain{
+	width: 100%;
+	height:100%;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	align-items: center;
+	padding: 5rem;
+
+}
+.person{
+	width:50%;
+	height:100%;
+	display: grid;
+	place-items: center;
+}
+
+.person>img{
+	width: 70%;
+	filter: drop-shadow(2rem 2rem 4rem #555);
+}
+.body{
+    width: 100%;
+    height: 100vh;
+    background: url("https://www.pedalo.co.uk/wp-content/uploads/2019/04/shutterstock_759200722.jpg"),no-repeat;
+    background-size:cover;
+}
+	.main {
+				width: 100%;
+				height: 80vh;
+				display: flex;
+				flex-direction: column;
+                justify-content: space-evenly;
+				padding: 2rem;
+				margin-top: 2rem;
+			}
+			.local {
+				width: 100%;
+				height: auto;
+				padding: 2rem;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+			}
+			.local > h1 {
+				font-size: 5rem;
+				font-family: monospace;
+				font-weight: 800;
+				text-transform: capitalize;
+				padding-left: 2rem;
+			}
+			.local > h2 {
+				font-size: 2.5rem;
+				font-family: monospace;
+				font-weight: 400;
+				text-transform: capitalize;
+				padding-left: 2rem;
+			}
+			.local > h3 {
+				font-size: 1.2rem;
+				font-family: monospace;
+				font-weight: 500;
+				text-transform: capitalize;
+				padding-left: 2rem;
+			}
+			.weather {
+				width: 100%;
+				height: auto;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.weather > div {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			.weather > div > img {
+				width: 25rem;
+				filter: drop-shadow(0.5rem 0.5rem 0.2rem #555);
+			}
+			.weather > div > h1 {
+				font-size: 8rem;
+				font-family: monospace;
+				font-weight: 800;
+				text-transform: capitalize;
+				color: sandybrown;
+				text-shadow: 0.2rem 0.2rem 0.4rem #555;
+			}
+			.weather > div > h2 {
+				font-size: 3rem;
+				font-family: monospace;
+				font-weight: 800;
+				text-transform: capitalize;
+				color: rgb(119, 161, 252);
+				text-shadow: 0.2rem 0.2rem 0.4rem #555;
+			}
+			.datas {
+				width: 100%;
+				height: auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+			.index {
+				width: max-content;
+                display:flex;
+                flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.index > h1 {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				font-size: 2rem;
+				font-weight: 800;
+				text-transform: capitalize;
+                color: rgb(129, 136, 236);
+                /* text-shadow: 0.1rem 0.1rem 0.2rem #555; */
+			}
+            .index > h2 {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				font-size: 1.5rem;
+				font-weight: 500;
+                color: #333;
+               
+			}
+            .index>img{
+                width: 4rem;
+                filter: drop-shadow(0.1rem 0.1rem 0 #333);
+            }
+
+			.pollution{
+				width: 100%;
+				height: auto;
+				display: flex;
+				flex-direction: column;
+                justify-content: space-evenly;
+				padding: 2rem;
+				margin-top: 2rem;
+			}
+			.head{
+				width:100%;
+				height: auto;
+				padding: 5rem;
+				display: flex;
+				flex-direction:row;
+				align-items:center;
+				justify-content: flex-start;
+
+			}
+			.head>img{
+				width: 25rem;
+				filter: drop-shadow(0.5rem 0.5rem 0.2rem #555);
+				padding-right: 5rem;
+			}
+			.head> h1 {
+				font-size: 8rem;
+				font-family: monospace;
+				font-weight: 800;
+				text-transform: capitalize;
+				color: rgb(183, 108, 245);
+				text-shadow: 0.2rem 0.2rem 0.4rem #555;
+			}
+			.details{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+			.weathermain {
+				width: 100%;
+				min-height: 80vh;
+				max-height: 120vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.inputs {
+				flex-grow: 1.5;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-evenly;
+			}
+			
+			.inputdiv {
+				width: 30vw;
+				height: auto;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.inputdiv > .input {
+				width: 20vw;
+				height: auto;
+				padding: 1rem 2rem;
+				border: none;
+				outline: none;
+				border-radius: 1.5rem;
+				box-shadow: 0.5rem 0.5rem 1rem #555;
+				font-size: 1.5rem;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				font-weight: 600;
+				text-transform: capitalize;
+			}
+			::placeholder {
+				font-size: 1.5rem;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				font-weight: 600;
+				text-transform: capitalize;
+			}
+			.button {
+				font-size: 1.5rem;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				font-weight: 600;
+				text-transform: capitalize;
+				color: white;
+				border: none;
+				outline: none;
+				background: royalblue;
+				padding: 1rem 2rem;
+				border-radius: 1.5rem;
+				cursor: pointer;
+				box-shadow: 0.5rem 0.5rem 1rem #555;
+			}
+			.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: auto;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: block;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+{{!-- body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+} --}}
+.gender{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.gender>h1{
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight:200;
+  text-align:left;
+}
+.gender>input,h2{
+  width: auto;
+  display: inline;
+  font-size: 1.2rem;
+  font-weight:200;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+		
+</style>

@@ -1,0 +1,278 @@
+<script>
+const links = document.querySelectorAll("a");
+const logoname = document.querySelector(".logoname");
+const coursoule = document.querySelector(".coursoule");
+const logoimage = document.querySelector(".logoimage");
+
+
+
+const clear = () => {
+    links.forEach((elem) => {
+        elem.classList.remove("on");
+
+    })
+}
+
+links.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        clear()
+        elem.classList.add("on");
+    });
+
+});
+
+var words = ['what is your city weather', "get the latest weather info to your city", "Just click on weather"],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 70;
+const event = () => {
+    setInterval(function () {
+        if (forwards) {
+            if (offset >= words[i].length) {
+                ++skip_count;
+                if (skip_count == skip_delay) {
+                    forwards = false;
+                    skip_count = 0;
+                }
+            }
+        }
+        else {
+            if (offset == 0) {
+                forwards = true;
+                i++;
+                offset = 0;
+                if (i >= len) {
+                    i = 0;
+                }
+            }
+        }
+        part = words[i].substr(0, offset);
+        if (skip_count == 0) {
+            if (forwards) {
+                offset++;
+            }
+            else {
+                offset--;
+            }
+        }
+        logoname.innerHTML = part;
+    }, speed);
+}
+
+// here is the coursole
+
+const path = ["https://cdn-icons-png.flaticon.com/512/3445/3445722.png", "https://cdn-icons-png.flaticon.com/512/932/932530.png", "https://cdn-icons-png.flaticon.com/512/1163/1163683.png","https://cdn-icons-png.flaticon.com/512/5759/5759586.png","https://cdn-icons-png.flaticon.com/512/1116/1116720.png"];
+let number = 0;
+const picture = () => {
+    setInterval(() => {
+        let inset = `<img src=${path[number]} alt=""/>`;
+        logoimage.innerHTML = inset;
+        coursoule.innerHTML = inset;
+
+        if(number == path.length - 1){
+            number = 0;
+        }else{
+            number++;
+        }
+    }, 7000)
+}
+
+window.addEventListener("load", () => {
+    event();
+    picture();
+    coursoule.innerHTML = `<img src=${path[number]} alt=""/>`;
+    logoimage.innerHTML =`<img src=${path[number]} alt=""/>`;
+    number++;
+})
+ 
+ const submit = document.getElementById("submit");
+ const main = document.querySelector(".main");
+
+window.addEventListener("load", async (e)=>{
+    e.preventDefault();
+ const code = document.getElementById("cityname").value;
+   if(code == "" || code == " "){
+       main.innerText ="fill the code name";
+    }else{
+        try{
+       const Fetch = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${code}&units=metric&appid=90d8a7f5a187724bdedcd073217c1538`);
+        const data = await Fetch.json();
+         console.log(data);
+         main.innerHTML = `
+			<div class="local">
+				<h1>${data.name}</h1>
+			</div>
+			<div class="weather">
+				<div>
+					<img
+						src="https://cdn-icons-png.flaticon.com/512/6697/6697685.png"
+						alt=""
+					/>
+					<h1>${data.weather[0].main}</h1>
+				</div>
+				<div>
+					<img
+						style="width: 4rem"
+						src="https://cdn-icons-png.flaticon.com/512/7366/7366791.png"
+						alt=""
+					/>
+					<h2>Temperature : ${data.main.temp}</h2>
+				</div>
+			</div>
+			<div class="datas">
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="" />
+					<h1>max Temperature</h1>
+					<h2>${data.main.temp_max}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3815/3815447.png" alt="" />
+					<h1>min Temperature</h1>
+					<h2>${data.main.temp_min}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005826.png" alt="" />
+					<h1>pressure</h1>
+					<h2>${data.main.pressure}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005754.png" alt="" />
+					<h1>humidity</h1>
+					<h2>${data.main.humidity}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/5136/5136205.png" alt="" />
+					<h1>visibility</h1>
+					<h2>${data.visibility}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3050/3050874.png" alt="" />
+					<h1>wind</h1>
+					<h2>${data.wind.speed}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315683.png" alt="" />
+					<h1>sunrise</h1>
+					<h2>${new Date(data.sys.sunrise).toLocaleTimeString()}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315684.png" alt="" />
+					<h1>sunset</h1>
+					<h2>${new Date(data.sys.sunset).toLocaleTimeString()}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/2385/2385060.png" alt="" />
+					<h1>longatitude</h1>
+					<h2>${data.coord.lon}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/7334/7334563.png" alt="" />
+					<h1>latitude</h1>
+					<h2>${data.coord.lat}</h2>
+				</div>
+			</div>`;
+        }
+        catch{
+        main.innerText ="fill the code name properly";
+        }
+   
+    }
+});
+
+submit.addEventListener("click", async (e)=>{
+    e.preventDefault();
+ const code = document.getElementById("cityname").value;
+   if(code == "" || code == " "){
+       main.innerText ="fill the code name";
+    }else{
+        try{
+       const Fetch = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${code}&units=metric&appid=90d8a7f5a187724bdedcd073217c1538`);
+        const data = await Fetch.json();
+         console.log(data);
+         main.innerHTML = `
+			<div class="local">
+				<h1>${data.name}</h1>
+			</div>
+			<div class="weather">
+				<div>
+					<img
+						src="https://cdn-icons-png.flaticon.com/512/6697/6697685.png"
+						alt=""
+					/>
+					<h1>${data.weather[0].main}</h1>
+				</div>
+				<div>
+					<img
+						style="width: 4rem"
+						src="https://cdn-icons-png.flaticon.com/512/7366/7366791.png"
+						alt=""
+					/>
+					<h2>Temperature : ${data.main.temp}</h2>
+				</div>
+			</div>
+			<div class="datas">
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="" />
+					<h1>max Temperature</h1>
+					<h2>${data.main.temp_max}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3815/3815447.png" alt="" />
+					<h1>min Temperature</h1>
+					<h2>${data.main.temp_min}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005826.png" alt="" />
+					<h1>pressure</h1>
+					<h2>${data.main.pressure}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/4005/4005754.png" alt="" />
+					<h1>humidity</h1>
+					<h2>${data.main.humidity}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/5136/5136205.png" alt="" />
+					<h1>visibility</h1>
+					<h2>${data.visibility}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/3050/3050874.png" alt="" />
+					<h1>wind</h1>
+					<h2>${data.wind.speed}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315683.png" alt="" />
+					<h1>sunrise</h1>
+					<h2>${new Date(data.sys.sunrise).toLocaleTimeString()}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/1315/1315684.png" alt="" />
+					<h1>sunset</h1>
+					<h2>${new Date(data.sys.sunset).toLocaleTimeString()}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/2385/2385060.png" alt="" />
+					<h1>longatitude</h1>
+					<h2>${data.coord.lon}</h2>
+				</div>
+				<div class="index">
+					<img src="https://cdn-icons-png.flaticon.com/512/7334/7334563.png" alt="" />
+					<h1>latitude</h1>
+					<h2>${data.coord.lat}</h2>
+				</div>
+			</div>`;
+        }
+        catch{
+        main.innerText ="fill the code name properly";
+        }
+   
+    }
+});
+
+</script>
